@@ -1,0 +1,102 @@
+Create a modern, high-end personal portfolio website with a dark luxury UI (black + red accent theme), inspired by cinematic storytelling design.
+
+Tech Stack:
+- React (Vite)
+- Tailwind CSS
+- Framer Motion (for smooth animations)
+
+Design Style:
+- Premium, minimal, dark background (#000)
+- Accent color: Red (#ff2c2c)
+- Smooth scroll + fade animations
+- Large typography with strong hierarchy
+- Split hero layout (text left, image right)
+- Floating particles or subtle background glow
+
+Sections:
+
+1. HERO SECTION
+- Heading:
+  "A boy who saw magic inside a computer."
+  (highlight "magic" in red italic)
+- Subtext:
+  Short storytelling paragraph about curiosity → career in digital marketing, design & development
+- CTA Button: "Discover My Work"
+- Right side: Profile image with red glowing border effect
+
+2. ABOUT / JOURNEY
+- Story-based section explaining:
+  - Started from curiosity
+  - Became Graphic Designer
+  - Digital Marketer
+  - MVP Developer
+  - Career Advisor
+- Add timeline-style UI
+
+3. SKILLS SECTION
+Create visually appealing cards or icons for:
+- Graphic Design (NSDA Certified)
+- Social Media Marketing
+- Vibe Coding
+- MVP Development
+- Web Design
+- Career Advising
+
+4. TECH / TOOLS LOGOS
+Show logos in a clean grid:
+- Google
+- Meta
+- OpenAI
+- Gemini
+- Adobe Photoshop
+- Adobe Illustrator
+
+(Add hover animation)
+
+5. PROJECTS SECTION
+Grid layout with hover effects:
+- Social Media Designs (mock thumbnails)
+- Web App UI Projects
+- Landing Pages
+- Branding Work
+
+Each card:
+- Image
+- Title
+- Short description
+- View Project button
+
+6. TESTIMONIAL SECTION
+Create 3–5 testimonials:
+- Client name
+- Short feedback
+- Star rating
+- Card layout with subtle glass effect
+
+7. CAREER ADVISOR SECTION
+- Highlight:
+  “Helping 500+ students start freelancing careers”
+- Add CTA: "Book a Session"
+
+8. CONTACT SECTION
+- Simple form:
+  Name, Email, Message
+- CTA button
+- Add social links (Fiverr, Upwork, LinkedIn)
+
+9. FOOTER
+- Minimal, clean
+- Copyright + name
+
+Animations:
+- Scroll reveal animations
+- Hover scaling on cards
+- Smooth transitions
+
+Extra:
+- Fully responsive (mobile-first)
+- Clean modern UI spacing
+- Use reusable components
+
+Goal:
+Make it feel like a premium personal brand website for a freelancer, digital marketer, and creator.
