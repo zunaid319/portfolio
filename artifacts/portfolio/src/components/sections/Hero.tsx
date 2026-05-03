@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import profileImg from "../../assets/profile.png";
 
 export function Hero() {
   return (
@@ -45,12 +46,12 @@ export function Hero() {
           >
             <div className="relative w-full max-w-md aspect-[4/5] group">
               <div className="absolute inset-0 border border-primary/50 shadow-[0_0_40px_rgba(255,44,44,0.3)] transition-all duration-700 group-hover:shadow-[0_0_60px_rgba(255,44,44,0.5)] -rotate-3 group-hover:rotate-0" />
-              <div className="absolute inset-0 bg-neutral-900 border border-border rotate-3 group-hover:rotate-0 transition-transform duration-700 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-tr from-neutral-900 to-neutral-800" />
-                {/* Replace with actual image when available */}
-                <div className="absolute inset-0 flex items-center justify-center text-muted-foreground font-serif italic text-2xl opacity-20">
-                  Portrait
-                </div>
+              <div className="absolute inset-0 border border-border rotate-3 group-hover:rotate-0 transition-transform duration-700 overflow-hidden bg-black">
+                <img
+                  src={profileImg}
+                  alt="Profile"
+                  className="absolute inset-0 w-full h-full object-cover object-top"
+                />
               </div>
             </div>
           </motion.div>
