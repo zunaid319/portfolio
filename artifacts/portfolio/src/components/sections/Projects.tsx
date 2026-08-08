@@ -1,31 +1,33 @@
 import { motion } from "framer-motion";
+import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
 
+import stcLogo from "../../assets/stc_logo.jpg";
+import sauceLogo from "../../assets/sauce_logo_thumb.jpg";
+import newrangeLogo from "../../assets/newrange_logo.png";
+
 const projects = [
   {
-    title: "Aura Brand Identity",
-    category: "Branding Work",
-    description: "Complete visual overhaul for a luxury wellness brand, including logo design and social media templates.",
-    gradient: "from-neutral-800 to-neutral-900",
+    title: "STC Mental Health",
+    category: "Empowerment & Life Skills",
+    description: "A person-centered mental health advocacy platform featuring interactive programs and transportation booking.",
+    image: stcLogo,
+    slug: "https://stcmhep.org/",
   },
   {
-    title: "NexGen SaaS App",
-    category: "Web App UI",
-    description: "Designed and developed the frontend for a B2B analytics platform using React and Tailwind CSS.",
-    gradient: "from-neutral-900 to-black",
+    title: "Sauce The City",
+    category: "Concessions Foodservice",
+    description: "High-volume stadium and airport concession foodservice brand featuring interactive menu strategy guidelines.",
+    image: sauceLogo,
+    slug: "https://saucethecity.com/",
   },
   {
-    title: "Luminary Launch",
-    category: "Landing Pages",
-    description: "High-converting cinematic landing page that drove a 40% increase in pre-orders for a tech hardware startup.",
-    gradient: "from-neutral-800 to-black",
-  },
-  {
-    title: "Vibe Culture Grid",
-    category: "Social Media Designs",
-    description: "A cohesive, viral Instagram grid design system for an emerging streetwear fashion label.",
-    gradient: "from-black to-neutral-900",
+    title: "New Range Online",
+    category: "Auto Parts E-Commerce",
+    description: "Aftermarket truck and car parts catalog platform featuring live cart checkout drawers and brand filtering.",
+    image: newrangeLogo,
+    slug: "https://newrangeonline.com/",
   },
 ];
 
@@ -50,34 +52,57 @@ export function Projects() {
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
-            <motion.div
-              key={project.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group relative cursor-pointer block"
-            >
-              <div className="relative aspect-[4/3] md:aspect-[16/10] overflow-hidden mb-6 bg-neutral-900 border border-white/5 group-hover:border-primary/30 transition-colors duration-500">
-                <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-80`} />
-                <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:20px_20px]" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-16 h-16 rounded-full border border-white/10 flex items-center justify-center bg-black/20 backdrop-blur-sm group-hover:scale-110 group-hover:border-primary/50 group-hover:bg-primary/10 transition-all duration-500">
-                    <ExternalLink className="w-6 h-6 text-white group-hover:text-primary transition-colors" />
+          {projects.map((project, index) => {
+            const isExternal = project.slug.startsWith("http");
+            const CardContent = (
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="cursor-pointer block"
+              >
+                <div className="relative aspect-[4/3] md:aspect-[16/10] overflow-hidden mb-6 bg-neutral-900 border border-white/5 group-hover:border-primary/30 transition-colors duration-500">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-colors duration-500" />
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    <div className="w-16 h-16 rounded-full border border-primary/50 flex items-center justify-center bg-primary/10 backdrop-blur-sm scale-90 group-hover:scale-100 transition-all duration-500">
+                      <ExternalLink className="w-6 h-6 text-primary" />
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-primary text-xs font-bold tracking-widest uppercase mb-2">{project.category}</span>
-                <h3 className="text-2xl font-serif font-bold mb-3">{project.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed mb-4">{project.description}</p>
-                <span className="text-sm font-medium underline underline-offset-4 decoration-white/20 group-hover:decoration-primary transition-colors">
-                  View Project
-                </span>
-              </div>
-            </motion.div>
-          ))}
+                <div className="flex flex-col">
+                  <span className="text-primary text-xs font-bold tracking-widest uppercase mb-2">{project.category}</span>
+                  <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">{project.title}</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{project.description}</p>
+                </div>
+              </motion.div>
+            );
+
+            if (isExternal) {
+              return (
+                <a
+                  key={project.title}
+                  href={project.slug}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block group"
+                >
+                  {CardContent}
+                </a>
+              );
+            }
+
+            return (
+              <Link key={project.title} href={project.slug} className="block group">
+                {CardContent}
+              </Link>
+            );
+          })}
         </div>
       </div>
     </section>

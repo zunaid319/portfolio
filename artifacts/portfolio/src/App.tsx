@@ -5,6 +5,13 @@ import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
+import AuraBrand from "@/pages/projects/AuraBrand";
+import NexGenSaaS from "@/pages/projects/NexGenSaaS";
+import LuminaryLaunch from "@/pages/projects/LuminaryLaunch";
+import VibeGrid from "@/pages/projects/VibeGrid";
+import STC from "@/pages/projects/STC";
+import SauceTheCity from "@/pages/projects/SauceTheCity";
+import NewRange from "@/pages/projects/NewRange";
 
 const queryClient = new QueryClient();
 
@@ -12,6 +19,13 @@ function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
+      <Route path="/project/aura" component={AuraBrand} />
+      <Route path="/project/nexgen" component={NexGenSaaS} />
+      <Route path="/project/luminary" component={LuminaryLaunch} />
+      <Route path="/project/vibe" component={VibeGrid} />
+      <Route path="/project/stc" component={STC} />
+      <Route path="/project/sauce" component={SauceTheCity} />
+      <Route path="/project/newrange" component={NewRange} />
       <Route component={NotFound} />
     </Switch>
   );

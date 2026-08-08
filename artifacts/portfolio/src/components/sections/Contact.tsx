@@ -3,8 +3,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { toast } from "sonner";
-import { SiFiverr, SiUpwork } from "react-icons/si";
-import { Linkedin } from "lucide-react";
+import { SiFiverr } from "react-icons/si";
 
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
@@ -28,9 +27,10 @@ export function Contact() {
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    toast.success("Message sent successfully", {
-      description: "I'll get back to you as soon as possible.",
-    });
+    const subject = encodeURIComponent(`Portfolio Message from ${values.name}`);
+    const body = encodeURIComponent(`Name: ${values.name}\nEmail: ${values.email}\n\nMessage:\n${values.message}`);
+    window.location.href = `mailto:zunaidislam117@gmail.com?subject=${subject}&body=${body}`;
+    toast.success("Redirecting to email client...");
     form.reset();
   }
 
@@ -49,18 +49,17 @@ export function Contact() {
             <p className="text-muted-foreground mb-10 text-lg">
               Have a project in mind? Looking for career advice? Let's discuss how we can work together.
             </p>
-
+            
             <div className="flex flex-col gap-6">
               <h4 className="text-sm font-bold uppercase tracking-widest text-neutral-400">Connect</h4>
               <div className="flex gap-4">
-                <a href="#" className="w-12 h-12 border border-white/10 rounded-full flex items-center justify-center hover:border-primary hover:text-primary transition-colors">
-                  <SiFiverr className="w-5 h-5" />
-                </a>
-                <a href="#" className="w-12 h-12 border border-white/10 rounded-full flex items-center justify-center hover:border-primary hover:text-primary transition-colors">
-                  <SiUpwork className="w-5 h-5" />
-                </a>
-                <a href="#" className="w-12 h-12 border border-white/10 rounded-full flex items-center justify-center hover:border-primary hover:text-primary transition-colors">
-                  <Linkedin className="w-5 h-5" />
+                <a 
+                  href="https://www.fiverr.com/zunaidislam" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="w-12 h-12 border border-white/10 rounded-full flex items-center justify-center hover:border-primary hover:text-primary transition-colors"
+                >
+                  <SiFiverr className="w-6 h-6" />
                 </a>
               </div>
             </div>
@@ -121,7 +120,7 @@ export function Contact() {
                   )}
                 />
 
-                <Button type="submit" className="w-full bg-white text-black hover:bg-primary hover:text-white rounded-none h-14 text-sm font-bold uppercase tracking-widest transition-colors duration-300">
+                <Button type="submit" className="w-full bg-white text-black hover:bg-primary hover:text-primary-foreground rounded-none h-14 text-sm font-bold uppercase tracking-widest transition-colors duration-300">
                   Send Message
                 </Button>
               </form>

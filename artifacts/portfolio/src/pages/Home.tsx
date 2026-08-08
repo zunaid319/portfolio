@@ -1,3 +1,4 @@
+import { Header } from "@/components/sections/Header";
 import { Hero } from "@/components/sections/Hero";
 import { Journey } from "@/components/sections/Journey";
 import { Skills } from "@/components/sections/Skills";
@@ -10,7 +11,8 @@ import { Footer } from "@/components/sections/Footer";
 
 export default function Home() {
   return (
-    <div className="bg-black min-h-screen text-white overflow-hidden selection:bg-primary selection:text-white">
+    <div className="bg-black min-h-screen text-white overflow-hidden selection:bg-primary selection:text-primary-foreground">
+      <Header />
       <Hero />
       <Journey />
       <Skills />

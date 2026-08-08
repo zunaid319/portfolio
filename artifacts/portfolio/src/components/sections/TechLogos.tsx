@@ -21,7 +21,7 @@ const container = {
 
 const item = {
   hidden: { opacity: 0, scale: 0.8 },
-  show: { opacity: 1, scale: 1, transition: { type: "spring", stiffness: 200, damping: 20 } }
+  show: { opacity: 1, scale: 1, transition: { type: "spring" as const, stiffness: 200, damping: 20 } }
 };
 
 export function TechLogos() {

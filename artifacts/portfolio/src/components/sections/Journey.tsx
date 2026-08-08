@@ -13,18 +13,28 @@ const timeline = [
   },
   {
     year: "Chapter 2",
+    title: "Responsive Web Design",
+    description: "Bridging visual arts and logic. Mastered modern CSS grids, flexbox, and mobile-first layouts to deliver pixel-perfect responsive interfaces.",
+  },
+  {
+    year: "Chapter 3",
     title: "Digital Marketer",
     description: "Translated visual appeal into measurable growth. Orchestrated campaigns, analyzed data, and drove audience engagement.",
   },
   {
-    year: "Chapter 3",
+    year: "Chapter 4",
     title: "MVP Developer",
     description: "Bridged the gap between design and functionality. Built robust, scalable minimum viable products for ambitious startups.",
   },
   {
-    year: "Present",
+    year: "Chapter 5",
     title: "Career Advisor",
     description: "Giving back to the community. Guiding the next generation of freelancers and creators to find their path in the digital world.",
+  },
+  {
+    year: "Present",
+    title: "Working Full Time Remotely",
+    description: "Engineering and scaling client products globally. Designing clean interfaces, writing modular code, and collaborating with cross-functional teams anywhere.",
   },
 ];
 

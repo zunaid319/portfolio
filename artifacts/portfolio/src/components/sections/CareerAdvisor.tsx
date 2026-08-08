@@ -15,10 +15,10 @@ export function CareerAdvisor() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="max-w-4xl mx-auto"
         >
-          <h2 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-white mb-6 leading-tight">
-            Helping <span className="italic text-black">500+</span> students start their freelancing careers.
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-neutral-950 mb-6 leading-tight">
+            Helping <span className="italic text-duthchas-burgundy">500+</span> students start their freelancing careers.
           </h2>
-          <p className="text-lg md:text-xl text-white/80 mb-10 max-w-2xl mx-auto font-medium">
+          <p className="text-lg md:text-xl text-neutral-800 mb-10 max-w-2xl mx-auto font-medium">
             Turn your skills into a sustainable business. Get actionable advice, portfolio reviews, and a roadmap to your first premium client.
           </p>
           <Button
