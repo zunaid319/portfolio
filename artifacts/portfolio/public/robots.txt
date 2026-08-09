@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+Sitemap: https://zunaid.pro.bd/sitemap.xml
+
+# Explicitly allow OpenAI ChatGPT bots
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# Explicitly allow Anthropic Claude bot
+User-agent: ClaudeBot
+Allow: /
+
+# Explicitly allow Google Bard/Gemini bot
+User-agent: Google-Extended
+Allow: /
